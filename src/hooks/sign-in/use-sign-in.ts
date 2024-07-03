@@ -35,10 +35,10 @@ export const useSignInForm = () => {
             title: "Success",
             description: "Welcome back!",
           });
-          // window.location.href = "/dashboard";
-          router.push("/dashboard")  ; 
-
+          //
           console.log("Redirecting to /dashboard");
+          router.refresh();
+          router.push("/dashboard");
         } else {
           setLoading(false);
           toast({

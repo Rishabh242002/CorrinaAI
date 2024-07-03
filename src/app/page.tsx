@@ -32,7 +32,7 @@ export default async function Home() {
               className="max-w-full h-auto object-contain"
             />
           </div>
-          <p className="text-center text-lg max-w-[500px]">
+          <p className="text-center text-muted-foreground text-lg max-w-[500px]">
             Your AI powered sales assistant! Embed Corinna AI into any website
             with just a snippet of code!
           </p>
@@ -57,7 +57,7 @@ export default async function Home() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-orange">
               Appointment Booking Made Simple
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mx-auto max-w-2xl mb-10">
+            <p className="text-lg md:text-xl text-muted-foreground mx-auto max-w-2xl mb-10">
               Your Assistant simplifies scheduling and ensures user book your
               appointment hassle-free.
             </p>
@@ -76,10 +76,10 @@ export default async function Home() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-orange">
               Effortless Email Marketing Campaigns{" "}
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mx-auto max-w-2xl">
+            <p className="text-lg md:text-xl text-muted-foreground mx-auto max-w-2xl">
               Easily create and manage email campaigns with our intuitive tools.
             </p>
-            <p className="text-lg md:text-xl text-gray-600 mx-auto max-w-2xl">
+            <p className="text-lg md:text-xl text-muted-foreground mx-auto max-w-2xl">
               Add contacts, craft your message, and send emails with just one
               click.
             </p>
@@ -93,20 +93,22 @@ export default async function Home() {
           />
         </div>
       </section>
-      <section className="-mt-15">
+      <section className="-mt-15 -mb-15">
         <div className="flex justify-center items-center flex-col ">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-orange">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-orange">
             {" "}
             Choose what fits you right
           </h1>
           <p className="text-muted-foreground text-center max-w-lg">
             Our straightforward pricing plans are tailored to meet your needs.
+          </p>
+          <p className="text-muted-foreground text-center max-w-lg">
             If
             {" you're"} not ready to commit you can get started for free.
           </p>
         </div>
 
-        <div className="flex  justify-center gap-4 flex-wrap mt-4">
+        <div className="flex  justify-center gap-4 flex-wrap mt-8">
           {pricingCards.map((card) => (
             <Card
               key={card.title}
@@ -156,9 +158,15 @@ export default async function Home() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-orange">
               Get started for free
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mx-auto max-w-2xl">
+            <p className="text-lg md:text-xl text-muted-foreground mx-auto max-w-2xl">
               Play around with it first. Pay and add your team later.
             </p>
+            <Button
+              asChild
+              className="bg-orange font-bold text-white px-4 mt-4"
+            >
+              <Link href="/dashboard">Try For Free</Link>
+            </Button>
           </header>
           <div className="relative w-full h-1/2 max-w-md">
             <img

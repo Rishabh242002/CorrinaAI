@@ -40,6 +40,7 @@ export const MinMenu = ({
               {...menu}
               key={key}
               current={current}
+              
             />
           ))}
           <DomainMenu
@@ -53,11 +54,6 @@ export const MinMenu = ({
             label="Sign out"
             icon={<LogOut />}
             onSignOut={onSignOut}
-          />
-          <MenuItem
-            size="min"
-            label="Mobile App"
-            icon={<MonitorSmartphone />}
           />
         </div>
       </div>

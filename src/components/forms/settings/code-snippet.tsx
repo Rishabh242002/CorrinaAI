@@ -28,18 +28,18 @@ const CodeSnippet = ({ id }: Props) => {
     }
 ');
 
-  iframe.src = "http://localhost:3000/chatbot";
+  iframe.src = "${process.env.BASE_URL}/chatbot";
   iframe.classList.add("chat-frame");
   document.body.appendChild(iframe);
 
   window.addEventListener("message", (e) => {
-    if (e.origin !== "http://localhost:3000") return null;
+    if (e.origin !== "${process.env.BASE_URL}") return null;
     let dimensions = JSON.parse(e.data);
     iframe.width = dimensions.width;
     iframe.height = dimensions.height;
     iframe.contentWindow.postMessage(
       "f73ba877-2691-4bbd-8388-bd5508c300dc",
-      "http://localhost:3000/"
+      "${process.env.BASE_URL}"
     );
   });
         `;
