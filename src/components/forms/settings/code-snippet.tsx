@@ -11,37 +11,34 @@ type Props = {
 const CodeSnippet = ({ id }: Props) => {
   const { toast } = useToast();
   let snippet = `
-  const iframe = document.createElement("iframe");
-
-  const iframeStyles = (styleString) => {
-    const style = document.createElement("style");
+    const iframe = document.createElement("iframe");
+    
+    const iframeStyles = (styleString) => {
+    const style = document.createElement('style');
     style.textContent = styleString;
     document.head.append(style);
-  };
-
-  iframeStyles('
-    .chat-frame {
-        position: fixed;
-        bottom: 10px;
-        right: 30px;
-        border: none;
     }
-');
-
-  iframe.src = "${process.env.BASE_URL}/chatbot";
-  iframe.classList.add("chat-frame");
-  document.body.appendChild(iframe);
-
-  window.addEventListener("message", (e) => {
-    if (e.origin !== "${process.env.BASE_URL}") return null;
-    let dimensions = JSON.parse(e.data);
-    iframe.width = dimensions.width;
-    iframe.height = dimensions.height;
-    iframe.contentWindow.postMessage(
-      "f73ba877-2691-4bbd-8388-bd5508c300dc",
-      "${process.env.BASE_URL}"
-    );
-  });
+    
+    iframeStyles('
+        .chat-frame {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            border: none;
+        }
+    ')
+    
+    iframe.src = "https://corrina-ai.vercel.app/chatbot"
+    iframe.classList.add('chat-frame')
+    document.body.appendChild(iframe)
+    
+    window.addEventListener("message", (e) => {
+        if(e.origin !== "https://corrina-ai.vercel.app/") return null
+        let dimensions = JSON.parse(e.data)
+        iframe.width = dimensions.width
+        iframe.height = dimensions.height
+        iframe.contentWindow.postMessage("${id}", "https://corrina-ai.vercel.app/")
+    })
         `;
 
   return (
