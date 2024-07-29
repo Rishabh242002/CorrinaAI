@@ -235,6 +235,7 @@ export const onAiChatBotAssistant = async (
               if the customer wants to buy a product redirect them to the payment page ${process.env.BASE_URL}/portal/${id}/payment/${
                 checkCustomer?.customer[0].id
               }
+              And give your answer in short, so that it would be easy for him to read.
           `,
             },
             ...chat,

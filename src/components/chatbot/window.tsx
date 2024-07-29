@@ -74,12 +74,15 @@ export const BotWindow = forwardRef<HTMLDivElement, Props>(
         <div className="flex justify-between px-4 pt-4">
           <div className="flex gap-2">
             <Avatar className="w-20 h-20">
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+              <AvatarImage
+                src="https://ucarecdn.com/7e7aaaea-3742-4679-84c5-c6da867f179f/1_lyyXmbeoK5JiIBNCnzzjjg.png"
+                alt="@shadcn"
+              />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <div className="flex items-start flex-col">
               <h3 className="text-lg font-bold leading-none">
-                Sales Rep - Rishabh Bhargava
+                AI Assistant- Kiara
               </h3>
               <p className="text-sm">{domainName.split(".com")[0]}</p>
               {realtimeMode?.mode && (
